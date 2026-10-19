@@ -175,17 +175,26 @@ section { scroll-margin-top: 72px; }
 .sys-req { color: var(--muted); font-size: 13px; margin-top: 16px; }
 
 /* ---- 处理引擎包（次要下载行 + 手动配置指引） ---- */
+/* 处理引擎包卡片（行 + 内嵌 SHA 折叠） */
+.engine-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-top: 12px;
+}
 .engine-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 12px 16px;
-  margin-top: 12px;
+}
+.engine-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
 }
 .engine-txt { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .alt-link {
@@ -266,16 +275,48 @@ section { scroll-margin-top: 72px; }
 .fig-hint { color: var(--muted); font-size: 12.5px; margin: 10px 0 0; }
 
 /* ---- 更新说明 ---- */
+/* 更新说明：折叠卡（默认仅最新版展开）；头行=版本+日期+本版下载 */
 .release {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 18px;
+  margin-bottom: 14px;
+  overflow: hidden;
 }
-.release h3 { display: flex; align-items: baseline; gap: 12px; }
-.rel-date { color: var(--muted); font-size: 13px; font-weight: 400; }
-.release ul { margin: 8px 0 0; padding-left: 20px; }
-.release li { margin: 4px 0; }
+/* 原生折叠标记（与 图文教程/猜你想问 的 details 一致）：
+   summary 保持默认 list-item 渲染标记，flex 布局放内层 */
+.rel-head { padding: 13px 18px; cursor: pointer; user-select: none; }
+.rel-in { display: flex; align-items: center; gap: 12px; }
+.rel-ver { font-size: 16px; font-weight: 700; }
+.rel-date { color: var(--muted); font-size: 12.5px; }
+.rel-dl {
+  margin-left: auto;
+  font-size: 12.5px;
+  color: var(--primary);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 12px;
+  background: #fafbfc;
+  white-space: nowrap;
+}
+.rel-dl:hover { border-color: var(--primary); }
+.release ul { margin: 0; padding: 2px 20px 15px 40px; }
+.release li { margin: 7px 0; font-size: 14px; line-height: 1.75; }
+.release li strong { font-weight: 600; }
+/* 类型标签 */
+.rel-tag {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 1px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  vertical-align: 1px;
+}
+.t-add { background: rgba(45, 164, 78, .12); color: #2da44e; }
+.t-imp { background: rgba(47, 111, 237, .1); color: #2f6fed; }
+.t-fix { background: rgba(191, 135, 0, .15); color: #9a6700; }
 
 /* ---- 激活 ---- */
 .sec-lead { color: var(--muted); margin-top: 0; }
@@ -376,17 +417,3 @@ section { scroll-margin-top: 72px; }
 .rb-list li { margin: 4px 0; font-size: 14px; }
 .rb-note { color: var(--muted); font-size: 12.5px; margin: 10px 0 0; }
 
-/* 更新说明卡内：本版下载链接 */
-.rel-dl { margin-top: 10px; }
-.rel-dl a {
-  display: inline-block;
-  font-size: 13px;
-  color: var(--primary);
-  text-decoration: none;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 4px 12px;
-  background: #fafbfc;
-  white-space: nowrap;
-}
-.rel-dl a:hover { border-color: var(--primary); }

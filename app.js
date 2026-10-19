@@ -116,36 +116,46 @@
   // CHANGELOG 里的 **加粗** 标记转 <strong>，其余按纯文本转义。
   const list = document.getElementById('cl-list');
   if (list && Array.isArray(m.releases) && m.releases.length) {
+    const TAGCLS = { '新增': 't-add', '改进': 't-imp', '修复': 't-fix' };
     list.replaceChildren(
-      ...m.releases.map((r) => {
-        const art = document.createElement('article');
+      ...m.releases.map((r, i) => {
+        const art = document.createElement('details');
         art.className = 'release';
-        const h = document.createElement('h3');
-        const v = document.createElement('span');
-        v.textContent = 'v' + r.version;
-        const d = document.createElement('span');
-        d.className = 'rel-date';
-        d.textContent = r.date;
-        h.append(v, d);
-        const ul = document.createElement('ul');
-        for (const n of r.notes || []) {
-          const li = document.createElement('li');
-          li.innerHTML = esc(n).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-          ul.appendChild(li);
-        }
-        art.append(h, ul);
-        // 本版下载（manifest.releases[n].downloads；有包才渲染）
+        if (i === 0) art.open = true; // 默认只展开最新版
+        const head = document.createElement('summary');
+        head.className = 'rel-head';
+        const wrap = document.createElement('span');
+        wrap.className = 'rel-in';
+        const ver = document.createElement('span');
+        ver.className = 'rel-ver';
+        ver.textContent = 'v' + r.version;
+        const date = document.createElement('span');
+        date.className = 'rel-date';
+        date.textContent = r.date;
+        wrap.append(ver, date);
         if (Array.isArray(r.downloads) && r.downloads.length) {
           const d = r.downloads[0];
-          const row = document.createElement('div');
-          row.className = 'rel-dl';
           const a = document.createElement('a');
+          a.className = 'rel-dl';
           a.href = d.file;
           a.setAttribute('download', '');
           a.textContent = '下载本版 · ' + mb(d.size);
-          row.appendChild(a);
-          art.appendChild(row);
+          a.addEventListener('click', (e) => e.stopPropagation()); // 下载不触发折叠
+          wrap.appendChild(a);
         }
+        head.appendChild(wrap);
+        const ul = document.createElement('ul');
+        for (const n of r.notes || []) {
+          const li = document.createElement('li');
+          let text = n;
+          let tag = '';
+          const tm = n.match(/^【(新增|改进|修复)】/);
+          if (tm) { tag = tm[1]; text = n.slice(tm[0].length); }
+          const html = esc(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+          li.innerHTML = (tag ? '<span class="rel-tag ' + (TAGCLS[tag] || '') + '">' + tag + '</span>' : '') + html;
+          ul.appendChild(li);
+        }
+        art.append(head, ul);
         return art;
       }),
     );

@@ -6,7 +6,7 @@
 <title>FFlow — 本地视频工具箱</title>
 <meta name="description" content="格式转换、压缩、画面调整、截图、拼接合成，全部在你自己的电脑上完成。Windows 本地视频工具箱 FFlow 官方网站。">
 <link rel="icon" type="image/png" href="appicon.png">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body id="top">
 
@@ -129,21 +129,25 @@
     </div>
 
     <!-- 处理引擎包：次要入口（应用内一键获取为主，此行服务离线机器/手动配置） -->
-    <div class="engine-row">
+    <div class="engine-card">
+      <div class="engine-row">
       <div class="engine-txt">
         <strong>处理引擎包</strong>
         <span class="mono muted" id="tool-file">ff-8.1.2-win64.zip</span>
         <span class="muted" id="tool-size">72.6 MB</span>
       </div>
-      <a class="btn" id="tool-dl" href="tools/ff-8.1.2-win64.zip">下载引擎包</a>
-      <button type="button" class="alt-link" id="altDlToggle" aria-expanded="false">其他下载路径</button>
+      <div class="engine-actions">
+        <a class="btn" id="tool-dl" href="tools/ff-8.1.2-win64.zip">下载引擎包</a>
+        <button type="button" class="alt-link" id="altDlToggle" aria-expanded="false">其他下载路径</button>
+      </div>
+      </div>
+      <details class="sha engine-sha">
+        <summary>引擎包校验信息（SHA-256）</summary>
+        <code id="tool-sha">013b346f31ac949165c0b02dd1e76af1c7b0508d90da3e13aac9fe3eb7b6aa8e</code>
+      </details>
     </div>
     <!-- 其他下载路径（网盘等人工渠道）：manifest.tools.alt 驱动，为空显示整理中 -->
     <div class="alt-panel hidden" id="altDlPanel"></div>
-    <details class="sha engine-sha">
-      <summary>引擎包校验信息（SHA-256）</summary>
-      <code id="tool-sha">013b346f31ac949165c0b02dd1e76af1c7b0508d90da3e13aac9fe3eb7b6aa8e</code>
-    </details>
     <details class="qa engine-guide">
       <summary>处理引擎图文教程（一键获取 / 离线导入 / 手动摆放）</summary>
       <div class="guide-step">
@@ -161,8 +165,8 @@
           </div>
           <div class="fig-title">方式 B：放进 bin 子文件夹</div>
           <div class="fig-card">
-            <div class="fig-row"><span class="fig-ic ff">f</span><span class="fig-nm">D:\FFlow\bin\ffmpeg.exe</span><span class="fig-nt">新建 bin 文件夹放入两个引擎文件</span></div>
-            <div class="fig-row"><span class="fig-ic ff">f</span><span class="fig-nm">D:\FFlow\bin\ffprobe.exe</span><span class="fig-nt">FFlow.exe 仍在 D:\FFlow\</span></div>
+            <div class="fig-row"><span class="fig-ic ff">f</span><span class="fig-nm">bin\ffmpeg.exe</span><span class="fig-nt">在 FFlow.exe 旁新建 bin 文件夹放入两个引擎文件</span></div>
+            <div class="fig-row"><span class="fig-ic ff">f</span><span class="fig-nm">bin\ffprobe.exe</span><span class="fig-nt">FFlow.exe 仍在 bin 的上一级</span></div>
           </div>
           <p class="fig-hint">两种摆法启动都会自动识别，无需任何设置。</p>
         </div>
@@ -174,18 +178,22 @@
   <section id="changelog">
     <h2>更新说明</h2>
     <div id="cl-list">
-      <article class="release">
-        <h3><span>v1.0.0</span><span class="rel-date">2026-10-17</span></h3>
+      <details class="release" open>
+        <summary class="rel-head"><span class="rel-in"><span class="rel-ver">v2.0.0</span><span class="rel-date">2026-10-19</span></span></summary>
         <ul>
-          <li>首个正式版本。FFlow 是一款本地视频工具箱：不联网、不上传，把文件拖进来即可处理——</li>
-          <li>格式转换与体积压缩（MP4 / 小体积 H.265 / WebM / GIF / 提取 MP3）。</li>
-          <li>画面处理：裁剪、旋转、字幕、水印、淡入淡出、横竖屏画布适配。</li>
-          <li>音频处理：提取音轨、调节音量、去掉原声换配乐。</li>
-          <li>截图与逐帧抽取。</li>
-          <li>多视频合成：拼接（带转场）、分屏宫格、画中画。</li>
-          <li>全部功能支持批量队列一次处理；另有「一句话让 AI 帮忙」和命令行两种进阶用法。</li>
+          <li><span class="rel-tag t-add">新增</span><strong>视频画质增强（新增「增强」页）</strong>：把模糊、低画质的视频变清晰或放大。</li>
+          <li><span class="rel-tag t-add">新增</span><strong>轻量安装，引擎一键获取</strong>：安装包约 5 MB，首次使用一键安装处理引擎。</li>
+          <li><span class="rel-tag t-imp">改进</span><strong>设置更清爽、激活更顺畅、AI 多步骤、界面排版整体优化</strong>。</li>
         </ul>
-      </article>
+      </details>
+      <details class="release">
+        <summary class="rel-head"><span class="rel-in"><span class="rel-ver">v1.1.0</span><span class="rel-date">2026-10-18</span></span></summary>
+        <ul><li><span class="rel-tag t-add">新增</span><strong>水印缩放与动态水印</strong>；AI 对话更顺手、界面细节打磨。</li></ul>
+      </details>
+      <details class="release">
+        <summary class="rel-head"><span class="rel-in"><span class="rel-ver">v1.0.0</span><span class="rel-date">2026-10-17</span></span></summary>
+        <ul><li>首个正式版本：五大类视频处理 + 批量队列 + AI 一句话处理。</li></ul>
+      </details>
     </div>
   </section>
 
@@ -254,6 +262,6 @@
   </div>
 </footer>
 
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>
