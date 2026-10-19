@@ -1,0 +1,4 @@
+{
+  "_comment": "引擎包的人工下载渠道（网盘等）。字段：label 名称 / url 链接 / note 备注（如提取码）。改完跑 node tools/build-manifest.mjs 重新生成 manifest。列表为空时页面显示“整理中”。应用内自动获取用的镜像仍是 manifest.tools.urls（由 ff-*.zip 自动生成），与本文件无关。",
+  "alt": []
+}
