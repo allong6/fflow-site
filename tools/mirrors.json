@@ -1,0 +1,10 @@
+{
+  "_comment": "引擎包的人工下载渠道（网盘等）。字段：label 名称 / url 链接 / password 密码（点击链接时自动复制到剪贴板）/ note 其他备注。改完跑 node tools/build-manifest.mjs 重新生成 manifest。列表为空时页面隐藏该行。",
+  "alt": [
+    {
+      "label": "蓝奏云",
+      "url": "https://wwazf.lanzouw.com/isfGT4ck6k0d",
+      "password": "83f6"
+    }
+  ]
+}

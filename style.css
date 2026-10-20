@@ -1,0 +1,624 @@
+/* FFlow 官网 — 配色与产品端一致（gui/frontend/dist/style.css 的 :root） */
+:root {
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --line: #e3e6ea;
+  --text: #24292f;
+  --muted: #6a737d;
+  --primary: #2f6fed;
+  --primary-hover: #2563d9;
+}
+
+* { box-sizing: border-box; }
+.hidden { display: none !important; }
+.ver-badge:empty { display: none; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.65 system-ui, "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.muted { color: var(--muted); }
+.mono { font-family: Consolas, "Courier New", monospace; font-size: 13px; }
+
+h1 { font-size: 34px; line-height: 1.3; margin: 0 0 14px; letter-spacing: .5px; }
+h2 { font-size: 20px; margin: 52px 0 18px; }
+h3 { font-size: 16px; margin: 0 0 6px; }
+
+section { scroll-margin-top: 72px; }
+
+/* ---- 顶栏 ---- */
+.site-head {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+/* 头部一行文字共用同一条基线（FFlow 底边）：品牌名、描述、导航、版本
+   徽标的字底全部对齐——.head-row 内 align-items:baseline，外层
+   .head-in 负责把整行在 60px 顶栏里垂直居中（baseline 行自身不吃
+   align-content，须分两层）。注意：参与基线对齐的子项不能是滚动容器
+   （会被合成底边基线），所以横向滚动放在内层 .nav-in 上 */
+.head-in {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.head-row {
+  display: flex;
+  align-items: baseline;
+  gap: 44px;
+  width: 100%;
+}
+/* logo 绝对定位、垂直居中——参与基线合成的是文字（首个 flex 子项），
+   若 logo 留在文档流里，品牌的基线会变成图片底边 */
+.brand {
+  position: relative;
+  display: flex;
+  padding-left: 46px; /* 34px logo + 12px 间距 */
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.brand img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+}
+.brand-text { display: inline-flex; align-items: baseline; gap: 12px; }
+.brand-desc {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.site-nav {
+  flex: 1;
+  min-width: 0;
+}
+.nav-in {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.site-nav a:hover { color: var(--text); }
+.ver-badge {
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 12px;
+  white-space: nowrap;
+}
+
+/* ---- 首屏 ---- */
+.hero { padding: 72px 0 8px; }
+.hero .sub { font-size: 17px; color: var(--muted); margin: 0 0 26px; max-width: 880px; }
+.hero-btns { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hero-note { color: var(--muted); font-size: 13px; margin-top: 14px; }
+
+/* ---- 按钮 ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 22px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:hover { border-color: var(--primary); color: var(--primary); }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn.primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: #fff; }
+.btn .size { font-weight: 400; font-size: 13px; opacity: .85; }
+.btn.block { width: 100%; }
+
+/* ---- 特性 ---- */
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 12px;
+}
+.feat {
+  display: flex;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+}
+.feat svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  stroke: var(--primary);
+  stroke-width: 1.3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.feat p { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* ---- 下载 ---- */
+.dl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 12px;
+}
+.dl-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dl-card .btn { margin-top: auto; }
+.dl-head { display: flex; align-items: baseline; justify-content: space-between; }
+.dl-head .size { color: var(--muted); font-size: 14px; }
+.dl-card p { margin: 0; }
+.sha { margin-top: 4px; }
+.sha summary { color: var(--muted); font-size: 13px; cursor: pointer; }
+.sha code {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  word-break: break-all;
+}
+.sys-req { color: var(--muted); font-size: 13px; margin-top: 16px; }
+
+/* ---- 处理引擎包（次要下载行 + 手动配置指引） ---- */
+/* 处理引擎包卡片（行 + 内嵌 SHA 折叠） */
+.engine-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-top: 12px;
+}
+.engine-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.engine-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+.engine-txt { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+/* 引擎包卡的平台小标（Windows / Linux 两行并列时区分） */
+.engine-txt .plat {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  padding: 1px 6px;
+  line-height: 1.4;
+}
+/* 下载卡内次级行：较旧系统包占位文字/按钮共用 */
+.dl-sub { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+.dl-sub.btn { margin-top: 10px; }
+.dl-hint { margin: 8px 0 0; font-size: 12.5px; color: var(--muted); }
+.dl-hint .mono { font-size: 12px; }
+/* 下载卡的平台切换下拉（select 形态）：与卡片边框同语言 */
+.dl-select {
+  width: 100%;
+  margin: 10px 0 4px;
+  padding: 9px 10px;
+  font: inherit;
+  font-size: 13.5px;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.dl-select:focus { outline: none; border-color: var(--primary); }
+/* 下载卡：下拉下方左右两栏（应用下载 / 工具下载），手机单列 */
+.dl-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+.dl-col-title {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.dl-col .mono { font-size: 12px; word-break: break-all; margin: 0 0 8px; }
+.dl-col .sha { margin-top: 8px; }
+/* 工具列动作行：下载按钮与更多渠道并排（渠道隐藏时按钮自动满宽） */
+.dl-col-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.dl-col-actions .btn { flex: 1 1 auto; }
+#alt-ddl[hidden] ~ *:empty, .ddl[hidden] { display: none; }
+.dl-col-actions .alt-links { margin: 0; font-size: 12px; }
+/* 下拉按钮组件：点击展开各平台下载项（hero / 下载卡 / 版本卡共用） */
+.ddl { position: relative; display: inline-block; }
+.ddl-grow { display: block; margin-top: auto; }
+.ddl .caret { font-size: 11px; opacity: .8; margin-left: 4px; }
+.ddl-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 40;
+  min-width: 250px;
+  max-width: calc(100vw - 24px);
+  padding: 6px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .14);
+}
+.ddl-menu-full { left: 0; right: 0; min-width: 0; }
+.ddl-menu-right { left: auto; right: 0; }
+.ddl-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 44px; /* 触控高度 */
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+.ddl-item:hover { background: var(--bg); color: var(--primary); }
+.ddl-item span:first-child { white-space: nowrap; }
+.ddl-item .muted { font-size: 12.5px; white-space: nowrap; }
+/* 引擎包卡内：更多下载渠道一行直列 */
+.alt-links { margin: 8px 0 0; font-size: 12.5px; color: var(--muted); }
+.alt-links a { color: var(--primary); text-decoration: none; }
+.alt-links a:hover { text-decoration: underline; }
+.engine-sha { margin-top: 8px; }
+.engine-guide { margin-top: 12px; }
+.guide-step { margin-top: 14px; }
+.guide-step p { margin: 0 0 8px; }
+.guide-step img {
+  display: block;
+  max-width: 100%;
+  width: 560px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* 摆放示意（内联图，随主题缩放） */
+/* 激活教程截图：与引擎教程图同款展示（不在 guide-step 容器内） */
+.guide-shot {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.guide-fig { max-width: 560px; }
+.fig-title { font-size: 13px; font-weight: 600; margin: 8px 0 4px; }
+.fig-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px 14px;
+}
+.fig-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-top: 1px solid var(--line);
+}
+.fig-row:first-child { border-top: none; }
+.fig-ic {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+.fig-ic.app { background: var(--primary); }
+.fig-ic.ff { background: var(--ok); }
+.fig-nm { font-family: Consolas, "Courier New", monospace; font-size: 13px; }
+.fig-nt { color: var(--muted); font-size: 12px; margin-left: auto; text-align: right; }
+.fig-hint { color: var(--muted); font-size: 12.5px; margin: 10px 0 0; }
+
+/* ---- 更新说明 ---- */
+/* 更新说明：折叠卡（默认仅最新版展开）；头行=版本+日期+本版下载 */
+/* overflow 不设 hidden：头行的环境下拉菜单要能伸出卡片下缘
+   （折叠态打开菜单时被裁掉，2026-10-20 实测）；圆角裁剪交给内边距 */
+.release {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+/* 原生折叠标记（与 图文教程/猜你想问 的 details 一致）：
+   summary 保持默认 list-item 渲染标记，flex 布局放内层 */
+.rel-head { padding: 13px 18px; cursor: pointer; user-select: none; }
+.rel-ver { margin-right: 10px; }
+.copy-ok { color: var(--ok); }
+.rel-ver { font-size: 16px; font-weight: 700; }
+.rel-date { color: var(--muted); font-size: 12.5px; }
+/* 头行动作（下载/视频讲解）：同为小按钮，向右浮动——DOM 序 dl 在前
+   浮到最右，视频链接居其左。下载按钮带下拉菜单，定位挂外层容器
+   .rel-ddl（span），内层 .ddl-toggle 只承担按钮样式 */
+.rel-actions {
+  float: right;
+  margin: 0 0 0 12px;
+}
+.rel-actions .rel-video { margin-left: 8px; }
+.rel-ddl .ddl-toggle {
+  display: inline-block;
+  margin: 0;
+}
+.rel-ddl .ddl-menu {
+  /* 头行按钮小，菜单字号同步收一点 */
+  font-size: 12.5px;
+}
+.rel-dl,
+.rel-video {
+  font-size: 12.5px;
+  color: var(--primary);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 12px;
+  background: #fafbfc;
+  white-space: nowrap;
+}
+.rel-dl:hover, .rel-video:hover { border-color: var(--primary); }
+/* 菜单展开时容器抬高，压过后续版本卡 */
+.rel-ddl.open { z-index: 50; }
+.release ul { margin: 0; padding: 2px 20px 15px 40px; }
+.release li { margin: 7px 0; font-size: 14px; line-height: 1.75; }
+.release li strong { font-weight: 600; }
+/* 类型标签 */
+.rel-tag {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 1px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  vertical-align: 1px;
+}
+.t-add { background: rgba(45, 164, 78, .12); color: #2da44e; }
+.t-imp { background: rgba(47, 111, 237, .1); color: #2f6fed; }
+.t-fix { background: rgba(191, 135, 0, .15); color: #9a6700; }
+
+/* ---- 激活 ---- */
+.sec-lead { color: var(--muted); margin-top: 0; }
+.steps { margin: 0; padding-left: 20px; }
+.steps li { margin: 10px 0; }
+.note {
+  color: var(--muted);
+  font-size: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+/* ---- FAQ ---- */
+.qa {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+}
+.qa summary { font-weight: 600; cursor: pointer; }
+.qa p { margin: 10px 0 0; color: var(--muted); }
+
+/* ---- 需求反馈 ---- */
+.feedback {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+}
+.feedback p { margin: 0 0 14px; }
+.feedback-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---- QQ 交流群弹层（桌面 hover / 触屏点按切换） ---- */
+.qq-wrap { position: relative; display: inline-flex; }
+.qq-pop {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 0 10px; /* 与按钮的视觉间距做在命中区内，鼠标移入弹层不断链 */
+  z-index: 20;
+}
+.qq-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .12);
+  padding: 12px 12px 10px;
+}
+.qq-card img { display: block; width: 240px; height: auto; border-radius: 6px; }
+.qq-line { font-size: 13px; margin-top: 8px; }
+.qq-line a { color: var(--primary); text-decoration: none; margin-left: 8px; font-size: 12.5px; }
+.qq-hint { font-size: 12px; color: var(--muted); }
+@media (hover: hover) {
+  .qq-wrap:hover .qq-pop,
+  .qq-wrap:focus-within .qq-pop { display: block; }
+}
+.qq-wrap.open .qq-pop { display: block; } /* 触屏：JS 切换 */
+
+/* ---- 条款 / 页脚 ---- */
+.terms-p { color: var(--muted); max-width: 720px; }
+.site-foot {
+  margin-top: 64px;
+  border-top: 1px solid var(--line);
+  padding: 24px 0 40px;
+  font-size: 14px;
+  text-align: center;
+}
+.site-foot p { margin: 4px 0; }
+
+/* ---- 窄屏单行顶栏（≤820px）：品牌+描述+导航+徽标整行放不下（641-768
+   会截断导航且横向滚动不可发现），隐藏描述与徽标保单行 ---- */
+@media (max-width: 820px) {
+  .brand-desc { display: none; }
+  .ver-badge { display: none; }
+}
+
+/* ---- 手机端（≤640px）：导航换行成第二行避免截断，整体收紧 ---- */
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+
+  /* 顶栏两行：第一行品牌，第二行导航整体换行展示（横向滚动在手机上
+     不可发现，六个锚点直接铺开更清楚） */
+  .head-in {
+    height: auto;
+    padding: 10px 16px; /* 左右与 .wrap 同距——之前写 10px 0 清掉了边距，顶栏贴屏幕边 */
+  }
+  .head-row {
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+  .brand { font-size: 16px; }
+  .site-nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .nav-in { gap: 13px; overflow-x: visible; }
+  .site-nav a { font-size: 13px; }
+  /* 版本徽标回第一行右侧：品牌行右侧本是大片空白，顺带补回版本信息 */
+  .ver-badge {
+    display: inline-flex;
+    margin-left: auto;
+    align-self: center;
+    font-size: 12px;
+    padding: 1px 10px;
+  }
+
+  section { scroll-margin-top: 96px; } /* 两行顶栏更高，锚点落位避开遮挡 */
+  h1 { font-size: 26px; }
+  h2 { font-size: 18px; margin: 36px 0 14px; }
+  .hero { padding-top: 30px; }
+  .hero .sub { font-size: 15px; }
+  .feat-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .feat { flex-direction: column; gap: 8px; padding: 13px 12px; }
+  .feat svg { width: 18px; height: 18px; }
+  .feat h3 { font-size: 15px; } /* 16px 时“简易 / 专业双模式”在双列卡里换行 */
+  .feat p { font-size: 13px; }
+  .dl-card, .release, .qa, .feedback { padding: 14px; }
+  .mono { font-size: 12px; overflow-wrap: anywhere; }
+  .btn { flex: 1 1 auto; height: 44px; } /* 44px 触控标准 */
+  .site-foot { margin-top: 44px; padding: 18px 0 32px; }
+
+  /* 版本卡头行：窄屏"版本+日期+下载按钮"差几像素放不下，浮动按钮会
+     掉到第二行并溢出卡片底边——改为绝对定位钉在行右侧、垂直居中，
+     并收小字号腾出宽度 */
+  .rel-head { position: relative; }
+  .rel-ver { font-size: 15px; margin-right: 8px; }
+  .rel-date { font-size: 12px; }
+  /* 动作行整体转到文字下方、右对齐——按钮不再内联随文字折行漂移 */
+  .rel-actions {
+    float: none;
+    display: block;
+    text-align: right;
+    margin: 8px 0 0;
+  }
+  .rel-actions .ddl-toggle,
+  .rel-actions .rel-video {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .rel-actions .rel-video { margin-left: 8px; }
+  .release ul { padding-left: 24px; } /* 默认 40px 缩进在窄屏太费宽度 */
+  .release-banner { padding: 13px 14px; }
+
+  /* 引擎包卡：动作行满宽 */
+  .engine-actions { width: 100%; margin-left: 0; }
+  .engine-card .btn { flex: 1; }
+
+  /* 下载卡左右栏手机改单列 */
+  .dl-cols { grid-template-columns: 1fr; }
+
+  /* QQ 弹层以按钮为锚在窄屏会左溢：改为屏幕居中弹层（无 hover，点按开关） */
+  .qq-pop {
+    position: fixed;
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+  }
+}
+
+/* ---- 发布亮点横幅（release note）---- */
+.release-banner {
+  margin-top: 28px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--primary);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.rb-head { display: flex; align-items: baseline; gap: 12px; }
+.rb-ver { font-size: 17px; font-weight: 700; color: var(--primary); }
+.rb-date { color: var(--muted); font-size: 13px; }
+.rb-link { margin-left: auto; font-size: 13px; color: var(--muted); text-decoration: none; white-space: nowrap; }
+.rb-link:hover { color: var(--text); }
+.rb-list { margin: 10px 0 0; padding-left: 18px; }
+.rb-list li { margin: 4px 0; font-size: 14px; }
+.rb-note { color: var(--muted); font-size: 12.5px; margin: 10px 0 0; }
+
+
+/* 使用条款：条目式白话 */
+.terms-list { margin: 0; padding-left: 18px; max-width: 880px; }
+.terms-list li { margin: 8px 0; font-size: 14px; line-height: 1.7; }
+.terms-list strong { font-weight: 600; }

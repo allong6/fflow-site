@@ -1,0 +1,160 @@
+{
+  "name": "FFlow",
+  "channel": "stable",
+  "version": "2.1.0",
+  "date": "2026-10-20",
+  "notes": [
+    "【新增】**Linux 版**：FFlow 登陆 Linux（amd64）——原生编译、适配主流桌面发行版（较新与较旧系统各有安装包），功能与 Windows 版一致；下载包单文件免安装，双击运行自动安家并注册到系统应用菜单。",
+    "【改进】**GIF 体积可控**：按实际转换时长把关——超过 10 秒照常转换但提示预计体积，超过 30 秒直接拒绝并建议改用 MP4 或截取片段（GIF 越长体积越大）；竖屏视频做 GIF 自动收窄默认宽度，长片段自动降低帧率与颜色数，画质档选择不受影响。",
+    "【改进】**其他优化**：启动自动体检环境，问题弹窗告知处理办法；AI「取片段转格式/做动图」一步到位；程序已运行时再次双击自动唤起已有窗口；界面与稳定性细节打磨。"
+  ],
+  "releases": [
+    {
+      "version": "2.1.0",
+      "date": "2026-10-20",
+      "notes": [
+        "【新增】**Linux 版**：FFlow 登陆 Linux（amd64）——原生编译、适配主流桌面发行版（较新与较旧系统各有安装包），功能与 Windows 版一致；下载包单文件免安装，双击运行自动安家并注册到系统应用菜单。",
+        "【改进】**GIF 体积可控**：按实际转换时长把关——超过 10 秒照常转换但提示预计体积，超过 30 秒直接拒绝并建议改用 MP4 或截取片段（GIF 越长体积越大）；竖屏视频做 GIF 自动收窄默认宽度，长片段自动降低帧率与颜色数，画质档选择不受影响。",
+        "【改进】**其他优化**：启动自动体检环境，问题弹窗告知处理办法；AI「取片段转格式/做动图」一步到位；程序已运行时再次双击自动唤起已有窗口；界面与稳定性细节打磨。"
+      ],
+      "downloads": [
+        {
+          "id": "lite",
+          "label": "Windows 10 / 11",
+          "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-win64-lite.zip",
+          "size": 24895440,
+          "sha256": "b363a85dfa9d8901af686e7bba671e871dc83ddecc050c13f416ad2d6aa095a9"
+        },
+        {
+          "id": "linux",
+          "label": "Linux（Ubuntu 22.04+ / Debian 12+ 等）",
+          "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite.zip",
+          "size": 24551913,
+          "sha256": "f13be5fcb970eaea778d5ed73bf46b300310edeb93a35b0a024bfbcda02ab728"
+        },
+        {
+          "id": "linux-old",
+          "label": "Linux（Ubuntu 20.04 / Debian 11 / 麒麟 / 统信）",
+          "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite-old.zip",
+          "size": 24548001,
+          "sha256": "300421e4094b913299998def35c14e2f8f6a3327a02f4daefd4bff11c1f753ac"
+        }
+      ]
+    },
+    {
+      "version": "2.0.0",
+      "date": "2026-10-19",
+      "notes": [
+        "【新增】**视频画质增强（新增「增强」页）**：把模糊、低画质的视频变清晰或放大。**快速增强**秒级完成、所有电脑可用，增强强度与画面放大（最高 4 倍）可选；**AI 超清**逐帧重绘、修复幅度更大（专业模式，离线免费）——需显卡（含核显）支持 Vulkan 才有实用速度，近年常见的 NVIDIA / AMD 显卡和较新核显基本都满足；不支持时改用软件模拟，极慢但可用，程序会自动检测并提示。",
+        "【新增】**轻量安装，引擎一键获取**：安装包瘦身为约 20 MB 的主程序（完整包约 76 MB）；首次使用时在 设置 → 版本信息 一键安装处理引擎（约 60 MB，联网一次、进度可见），离线电脑可导入从官网下载的引擎包，均无需手动配置。",
+        "【改进】**设置中心更清爽**：工具相关内容并入「版本信息」，页签更少；处理引擎自动识别，无需填写目录。",
+        "【改进】**激活流程更顺畅**：激活按钮紧邻激活码输入框；填好激活码后即使直接点「保存」也会自动完成激活。",
+        "【改进】**AI 一句话处理能力增强**：可胜任更复杂的多步骤组合需求，一句话即可完成拆解与执行。",
+        "【改进】**界面排版整体优化**：主要页面、弹窗与任务队列布局重排，观感与稳定性提升。"
+      ],
+      "video": "https://www.bilibili.com/video/BV1a1JR6fEhL",
+      "downloads": [
+        {
+          "id": "lite",
+          "label": "Windows 10 / 11",
+          "file": "https://github.com/allong6/fflow-site/releases/download/v2.0.0/FFlow-win64-20261019-lite.zip",
+          "size": 21191509,
+          "sha256": "bf76d13b1902883798ca3f637a49fa078006912efce953ec44150a5141203c8f"
+        }
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-10-18",
+      "notes": [
+        "【新增】**水印缩放**：水印大小可按画面宽度的百分比设定，高度自动等比。批量处理多个视频时各自适配分辨率，大 logo 不再占满画面。",
+        "【新增】**动态水印（防盗用）**：水印位置随时间移动，他人难以裁掉，三种方式任选——；**定时换角**：每隔几秒自动换一个角；**来回弹跳**：在画面内来回弹（默认横竖都动，也可只往一个方向）；**匀速漂移**：像走马灯一样匀速穿过画面，循环往复。",
+        "移动快慢默认按视频时长自动调整（短视频动得勤、长视频动得缓），也可自己指定秒数；位置选「平铺」时不能同时开启动态。命令行同样支持以上水印新能力。",
+        "【新增】**AI 一句话处理**：对 AI 说「加个动态水印防盗用」「水印缩小到画面宽度的三成」这类话，即可直接完成。",
+        "【改进】**AI 对话更顺手**：常用需求模板重整为 12 条日常场景（做 GIF 表情包自动只取前 5 秒）；计划卡片更紧凑，执行明细默认折叠；AI 回答和任务进展自动滚动到最新内容。",
+        "【改进】**界面细节打磨**：提示出现/消失不再引起页面跳动；窗口拖窄后界面不再拥挤；任务队列标题行按钮对齐修正。",
+        "【修复】AI 计划内容较多时，卡片底部被截断、滚不到底的问题。"
+      ],
+      "downloads": [
+        {
+          "id": "lite",
+          "label": "Windows 10 / 11",
+          "file": "https://github.com/allong6/fflow-site/releases/download/v1.1.0/FFlow-win64-20261018-lite.zip",
+          "size": 5124620,
+          "sha256": "5845feb13ba63d967948362143778cbec3c7af4d7b17b517187f21767948ca7c"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-10-17",
+      "notes": [
+        "首个正式版本。FFlow 是一款本地视频工具箱：不联网、不上传，把文件拖进来即可处理——",
+        "格式转换与体积压缩（MP4 / 小体积 H.265 / WebM / GIF / 提取 MP3）；",
+        "画面处理：裁剪、旋转、字幕、水印、淡入淡出、横竖屏画布适配；",
+        "音频处理：提取音轨、调节音量、去掉原声换配乐；",
+        "截图与逐帧抽取；",
+        "多视频合成：拼接（带转场）、分屏宫格、画中画；",
+        "全部功能支持批量队列一次处理；另有「一句话让 AI 帮忙」和命令行两种进阶用法。"
+      ],
+      "video": "https://www.bilibili.com/video/BV1itn36LEgd",
+      "downloads": [
+        {
+          "id": "lite",
+          "label": "Windows 10 / 11",
+          "file": "https://github.com/allong6/fflow-site/releases/download/v1.0.0/FFlow-win64-20261015-lite.zip",
+          "size": 5104319,
+          "sha256": "399cd325ef7cc4e1ec88a33a4b5d673aba89c554e6b0fc59e83239c564ef2d69"
+        }
+      ]
+    }
+  ],
+  "downloads": [
+    {
+      "id": "lite",
+      "label": "Windows 10 / 11",
+      "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-win64-lite.zip",
+      "size": 24895440,
+      "sha256": "b363a85dfa9d8901af686e7bba671e871dc83ddecc050c13f416ad2d6aa095a9"
+    },
+    {
+      "id": "linux",
+      "label": "Linux（Ubuntu 22.04+ / Debian 12+ 等）",
+      "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite.zip",
+      "size": 24551913,
+      "sha256": "f13be5fcb970eaea778d5ed73bf46b300310edeb93a35b0a024bfbcda02ab728"
+    },
+    {
+      "id": "linux-old",
+      "label": "Linux（Ubuntu 20.04 / Debian 11 / 麒麟 / 统信）",
+      "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite-old.zip",
+      "size": 24548001,
+      "sha256": "300421e4094b913299998def35c14e2f8f6a3327a02f4daefd4bff11c1f753ac"
+    }
+  ],
+  "tools": {
+    "ffmpeg": "8.1.2",
+    "zip": "https://github.com/allong6/fflow-site/releases/download/v2.0.0/ff-8.1.2-win64.zip",
+    "size": 76141544,
+    "sha256": "013b346f31ac949165c0b02dd1e76af1c7b0508d90da3e13aac9fe3eb7b6aa8e",
+    "urls": [
+      "https://github.com/allong6/fflow-site/releases/download/v2.0.0/ff-8.1.2-win64.zip"
+    ],
+    "linux": {
+      "ffmpeg": "8.1.3",
+      "zip": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/ff-8.1.3-linux64.zip",
+      "size": 135390145,
+      "sha256": "62807d35db5842894352a5ab3627bc9277beb05b6c0a623b90644e902c5a5581",
+      "urls": [
+        "https://github.com/allong6/fflow-site/releases/download/v2.1.0/ff-8.1.3-linux64.zip"
+      ]
+    },
+    "alt": [
+      {
+        "label": "蓝奏云",
+        "url": "https://wwazf.lanzouw.com/isfGT4ck6k0d",
+        "password": "83f6"
+      }
+    ]
+  }
+}

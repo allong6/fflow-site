@@ -1,0 +1,65 @@
+{
+  "_comment": "所有安装包与引擎包统一挂 GitHub Release 附件（站仓不再存 zip——版本包每版 3+ 份、引擎包 72~135MB，仓库体积线性膨胀且受单文件 100MB 上限）。发版流程：gh release create v<x.y.z> 上传全部附件 → 核对 size/sha256 更新本文件 → node tools/build-manifest.mjs。versions 键=版本号（不带 v），release 缺省用 v<版本>；engines 各自指定所属 release。",
+  "versions": {
+    "2.1.0": [
+      {
+        "id": "lite",
+        "file": "FFlow-v2.1.0-win64-lite.zip",
+        "size": 24895440,
+        "sha256": "b363a85dfa9d8901af686e7bba671e871dc83ddecc050c13f416ad2d6aa095a9"
+      },
+      {
+        "id": "linux",
+        "file": "FFlow-v2.1.0-linux64-lite.zip",
+        "size": 24551913,
+        "sha256": "f13be5fcb970eaea778d5ed73bf46b300310edeb93a35b0a024bfbcda02ab728"
+      },
+      {
+        "id": "linux-old",
+        "file": "FFlow-v2.1.0-linux64-lite-old.zip",
+        "size": 24548001,
+        "sha256": "300421e4094b913299998def35c14e2f8f6a3327a02f4daefd4bff11c1f753ac"
+      }
+    ],
+    "2.0.0": [
+      {
+        "id": "lite",
+        "file": "FFlow-win64-20261019-lite.zip",
+        "size": 21191509,
+        "sha256": "bf76d13b1902883798ca3f637a49fa078006912efce953ec44150a5141203c8f"
+      }
+    ],
+    "1.1.0": [
+      {
+        "id": "lite",
+        "file": "FFlow-win64-20261018-lite.zip",
+        "size": 5124620,
+        "sha256": "5845feb13ba63d967948362143778cbec3c7af4d7b17b517187f21767948ca7c"
+      }
+    ],
+    "1.0.0": [
+      {
+        "id": "lite",
+        "file": "FFlow-win64-20261015-lite.zip",
+        "size": 5104319,
+        "sha256": "399cd325ef7cc4e1ec88a33a4b5d673aba89c554e6b0fc59e83239c564ef2d69"
+      }
+    ]
+  },
+  "engines": {
+    "win": {
+      "ffmpeg": "8.1.2",
+      "file": "ff-8.1.2-win64.zip",
+      "release": "v2.0.0",
+      "size": 76141544,
+      "sha256": "013b346f31ac949165c0b02dd1e76af1c7b0508d90da3e13aac9fe3eb7b6aa8e"
+    },
+    "linux": {
+      "ffmpeg": "8.1.3",
+      "file": "ff-8.1.3-linux64.zip",
+      "release": "v2.1.0",
+      "size": 135390145,
+      "sha256": "62807d35db5842894352a5ab3627bc9277beb05b6c0a623b90644e902c5a5581"
+    }
+  }
+}
