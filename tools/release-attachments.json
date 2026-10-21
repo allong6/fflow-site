@@ -1,6 +1,26 @@
 {
   "_comment": "所有安装包与引擎包统一挂 GitHub Release 附件（站仓不再存 zip——版本包每版 3+ 份、引擎包 72~135MB，仓库体积线性膨胀且受单文件 100MB 上限）。发版流程：gh release create v<x.y.z> 上传全部附件 → 核对 size/sha256 更新本文件 → node tools/build-manifest.mjs。versions 键=版本号（不带 v），release 缺省用 v<版本>；engines 各自指定所属 release。",
   "versions": {
+    "2.2.0": [
+      {
+        "id": "lite",
+        "file": "FFlow-v2.2.0-win64-lite.zip",
+        "size": 24905229,
+        "sha256": "8c8eed227a4685c33230c2cc08ef4ca73d724eec46d8179eb98334e35837452b"
+      },
+      {
+        "id": "linux",
+        "file": "FFlow-v2.2.0-linux64-lite.zip",
+        "size": 24558834,
+        "sha256": "642c60fcf7ebbd5b6a1be7de962f761235283f8b8edf8f10ceb5d203b8b5b9fa"
+      },
+      {
+        "id": "linux-old",
+        "file": "FFlow-v2.2.0-linux64-lite-old.zip",
+        "size": 24554704,
+        "sha256": "c57d4d4fd995a47519da89897de7ac93061da194c14a5eb1b3f7075a53ae32a4"
+      }
+    ],
     "2.1.0": [
       {
         "id": "lite",

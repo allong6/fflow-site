@@ -1,14 +1,42 @@
 {
   "name": "FFlow",
   "channel": "stable",
-  "version": "2.1.0",
-  "date": "2026-10-20",
+  "version": "2.2.0",
+  "date": "2026-10-21",
   "notes": [
-    "【新增】**Linux 版**：FFlow 登陆 Linux（amd64）——原生编译、适配主流桌面发行版（较新与较旧系统各有安装包），功能与 Windows 版一致；下载包单文件免安装，双击运行自动安家并注册到系统应用菜单。",
-    "【改进】**GIF 体积可控**：按实际转换时长把关——超过 10 秒照常转换但提示预计体积，超过 30 秒直接拒绝并建议改用 MP4 或截取片段（GIF 越长体积越大）；竖屏视频做 GIF 自动收窄默认宽度，长片段自动降低帧率与颜色数，画质档选择不受影响。",
-    "【改进】**其他优化**：启动自动体检环境，问题弹窗告知处理办法；AI「取片段转格式/做动图」一步到位；程序已运行时再次双击自动唤起已有窗口；界面与稳定性细节打磨。"
+    "【改进】**AI 对话深度优化**：「让 AI 修复」即可自动修到出结果（自动换方案重跑、失败续修，全程只显示一行进度）；多文件排列取值优化；执行记录展示优化；多轮对话自动精简，越聊越省流量。"
   ],
   "releases": [
+    {
+      "version": "2.2.0",
+      "date": "2026-10-21",
+      "notes": [
+        "【改进】**AI 对话深度优化**：「让 AI 修复」即可自动修到出结果（自动换方案重跑、失败续修，全程只显示一行进度）；多文件排列取值优化；执行记录展示优化；多轮对话自动精简，越聊越省流量。"
+      ],
+      "downloads": [
+        {
+          "id": "lite",
+          "label": "Windows 10 / 11",
+          "file": "https://github.com/allong6/fflow-site/releases/download/v2.2.0/FFlow-v2.2.0-win64-lite.zip",
+          "size": 24905229,
+          "sha256": "8c8eed227a4685c33230c2cc08ef4ca73d724eec46d8179eb98334e35837452b"
+        },
+        {
+          "id": "linux",
+          "label": "Linux（Ubuntu 22.04+ / Debian 12+ 等）",
+          "file": "https://github.com/allong6/fflow-site/releases/download/v2.2.0/FFlow-v2.2.0-linux64-lite.zip",
+          "size": 24558834,
+          "sha256": "642c60fcf7ebbd5b6a1be7de962f761235283f8b8edf8f10ceb5d203b8b5b9fa"
+        },
+        {
+          "id": "linux-old",
+          "label": "Linux（Ubuntu 20.04 / Debian 11 / 麒麟 / 统信）",
+          "file": "https://github.com/allong6/fflow-site/releases/download/v2.2.0/FFlow-v2.2.0-linux64-lite-old.zip",
+          "size": 24554704,
+          "sha256": "c57d4d4fd995a47519da89897de7ac93061da194c14a5eb1b3f7075a53ae32a4"
+        }
+      ]
+    },
     {
       "version": "2.1.0",
       "date": "2026-10-20",
@@ -113,23 +141,23 @@
     {
       "id": "lite",
       "label": "Windows 10 / 11",
-      "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-win64-lite.zip",
-      "size": 24900022,
-      "sha256": "d1c6979c5758b4c5e9748b728f1d74ed61bb02c4400c6006af4bbe493ea75f6e"
+      "file": "https://github.com/allong6/fflow-site/releases/download/v2.2.0/FFlow-v2.2.0-win64-lite.zip",
+      "size": 24905229,
+      "sha256": "8c8eed227a4685c33230c2cc08ef4ca73d724eec46d8179eb98334e35837452b"
     },
     {
       "id": "linux",
       "label": "Linux（Ubuntu 22.04+ / Debian 12+ 等）",
-      "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite.zip",
-      "size": 24553139,
-      "sha256": "de37f9d90c0c958efc369de2d5206ce2cfea5ab26c355bd1aeb048fcba8731ff"
+      "file": "https://github.com/allong6/fflow-site/releases/download/v2.2.0/FFlow-v2.2.0-linux64-lite.zip",
+      "size": 24558834,
+      "sha256": "642c60fcf7ebbd5b6a1be7de962f761235283f8b8edf8f10ceb5d203b8b5b9fa"
     },
     {
       "id": "linux-old",
       "label": "Linux（Ubuntu 20.04 / Debian 11 / 麒麟 / 统信）",
-      "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite-old.zip",
-      "size": 24551541,
-      "sha256": "7259ab42c6dd31a04937f2bb7e385a2f562e9d0add3f9e1f29954079b6e867c3"
+      "file": "https://github.com/allong6/fflow-site/releases/download/v2.2.0/FFlow-v2.2.0-linux64-lite-old.zip",
+      "size": 24554704,
+      "sha256": "c57d4d4fd995a47519da89897de7ac93061da194c14a5eb1b3f7075a53ae32a4"
     }
   ],
   "tools": {
