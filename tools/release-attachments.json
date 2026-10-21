@@ -5,20 +5,20 @@
       {
         "id": "lite",
         "file": "FFlow-v2.2.0-win64-lite.zip",
-        "size": 24905719,
-        "sha256": "9637c8a5b3d9d9c3fb008476d7412ff0f8d27b307f3c3c857745ecd536841d48"
+        "size": 24905521,
+        "sha256": "d33951298c7f163d93c0e10c812960bfce74b419d07ea75fb70c6dfb92257b1a"
       },
       {
         "id": "linux",
         "file": "FFlow-v2.2.0-linux64-lite.zip",
-        "size": 24560309,
-        "sha256": "5a5c0faf329c12eb23086948148500ed29f28bf0f0e96304116bb802ce5f8d61"
+        "size": 24558306,
+        "sha256": "c326c63c9d45142a0eba642ef7cba76cc4ac4e86b90864756b1bcb8e8498119b"
       },
       {
         "id": "linux-old",
         "file": "FFlow-v2.2.0-linux64-lite-old.zip",
-        "size": 24552293,
-        "sha256": "91860f3221d4b15bce0e9cc0bc0aaa287543503f94bda4bf50e022e8424a505e"
+        "size": 24552704,
+        "sha256": "3ea440f02f54f5ae4c6b17f5ae8e4488f4e418424a312e2286151594bff3e8b8"
       }
     ],
     "2.1.0": [
