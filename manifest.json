@@ -22,22 +22,22 @@
           "id": "lite",
           "label": "Windows 10 / 11",
           "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-win64-lite.zip",
-          "size": 24895440,
-          "sha256": "b363a85dfa9d8901af686e7bba671e871dc83ddecc050c13f416ad2d6aa095a9"
+          "size": 24900022,
+          "sha256": "d1c6979c5758b4c5e9748b728f1d74ed61bb02c4400c6006af4bbe493ea75f6e"
         },
         {
           "id": "linux",
           "label": "Linux（Ubuntu 22.04+ / Debian 12+ 等）",
           "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite.zip",
-          "size": 24551913,
-          "sha256": "f13be5fcb970eaea778d5ed73bf46b300310edeb93a35b0a024bfbcda02ab728"
+          "size": 24553139,
+          "sha256": "de37f9d90c0c958efc369de2d5206ce2cfea5ab26c355bd1aeb048fcba8731ff"
         },
         {
           "id": "linux-old",
           "label": "Linux（Ubuntu 20.04 / Debian 11 / 麒麟 / 统信）",
           "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite-old.zip",
-          "size": 24548001,
-          "sha256": "300421e4094b913299998def35c14e2f8f6a3327a02f4daefd4bff11c1f753ac"
+          "size": 24551541,
+          "sha256": "7259ab42c6dd31a04937f2bb7e385a2f562e9d0add3f9e1f29954079b6e867c3"
         }
       ]
     },
@@ -114,22 +114,22 @@
       "id": "lite",
       "label": "Windows 10 / 11",
       "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-win64-lite.zip",
-      "size": 24895440,
-      "sha256": "b363a85dfa9d8901af686e7bba671e871dc83ddecc050c13f416ad2d6aa095a9"
+      "size": 24900022,
+      "sha256": "d1c6979c5758b4c5e9748b728f1d74ed61bb02c4400c6006af4bbe493ea75f6e"
     },
     {
       "id": "linux",
       "label": "Linux（Ubuntu 22.04+ / Debian 12+ 等）",
       "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite.zip",
-      "size": 24551913,
-      "sha256": "f13be5fcb970eaea778d5ed73bf46b300310edeb93a35b0a024bfbcda02ab728"
+      "size": 24553139,
+      "sha256": "de37f9d90c0c958efc369de2d5206ce2cfea5ab26c355bd1aeb048fcba8731ff"
     },
     {
       "id": "linux-old",
       "label": "Linux（Ubuntu 20.04 / Debian 11 / 麒麟 / 统信）",
       "file": "https://github.com/allong6/fflow-site/releases/download/v2.1.0/FFlow-v2.1.0-linux64-lite-old.zip",
-      "size": 24548001,
-      "sha256": "300421e4094b913299998def35c14e2f8f6a3327a02f4daefd4bff11c1f753ac"
+      "size": 24551541,
+      "sha256": "7259ab42c6dd31a04937f2bb7e385a2f562e9d0add3f9e1f29954079b6e867c3"
     }
   ],
   "tools": {
